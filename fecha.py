@@ -61,4 +61,50 @@ def fecha_valida(d,m,a):
 
 
 
+def es_posterior(d1,m1,a1,d2,m2,a2):
+  if a1>a2:
+    return True
+
+  elif a1==a2:
+    if m1>m2:
+      return True
+
+    elif m1==m2:
+      if d1>d2:
+        return True
+      
+      else:
+        return False
+
+    else:
+      return False
+
+  else: 
+    return False
+
+
+
+def es_anterior(d1,m1,a1,d2,m2,a2):
+  if a1<a2:
+    return True
+
+  elif a1==a2:
+    if m1<m2:
+      return True
+
+    elif m1==m2:
+      if d1<d2:
+        return True
+
+      else:
+        return False
+    
+    else:
+      return False
+
+  else:
+    return False
+
+
+
 print(dias_mes(2,2021))
