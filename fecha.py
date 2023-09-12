@@ -24,6 +24,8 @@ DIAS_FEBRERO=28
 
 DIAS_FEBRERO_BISIESTO=29
 
+asoci={1:DIAS_ENERO,2:DIAS_FEBRERO,3:DIAS_MARZO,4:DIAS_ABRIL,5:DIAS_MAYO,6:DIAS_JUNIO,7:DIAS_JULIO,8:DIAS_AGOSTO,9:DIAS_SEPTIEMBRE,10:DIAS_OCTUBRE,11:DIAS_NOVIEMBRE,12:DIAS_DICIEMBRE}
+
 #Faltan las variables sobre festividades del año como DIA_TRABAJO etc
 
 def es_bisiesto(a):
@@ -41,6 +43,22 @@ def dias_mes(m,a):
 
     else:
         return asoci[m]
+
+
+def fecha_valida(d,m,a):
+  if es_bisiesto(a) and m==2:
+    if d>0 and d<=29:
+      return True
+    else:
+      return False
+
+  elif es_bisiesto(a)==False:
+    if d>0 and d<=asoci[m]:
+      return True
+
+    else:
+      return False
+
 
 
 print(dias_mes(2,2021))
