@@ -138,6 +138,7 @@ def es_igual(d1,m1,a1,d2,m2,a2):
 
 
 def dias_transcurridos(d,m,a):
+    return int(sum(dias_mes(range(m),a))+d)
 
 
 
