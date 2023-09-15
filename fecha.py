@@ -51,14 +51,13 @@ DIA_HALLOWEEN=31
 MES_HALLOWEEN=10
 
 def es_bisiesto(a):
-    if (a%4==0 and a%100!=0) or a%100==0:
+    if (a%4==0 and a%100!=0) or a%400==0:
         return True
     else:
         return False
 
 
 def dias_mes(m,a):
-    asoci={1:DIAS_ENERO,2:DIAS_FEBRERO,3:DIAS_MARZO,4:DIAS_ABRIL,5:DIAS_MAYO,6:DIAS_JUNIO,7:DIAS_JULIO,8:DIAS_AGOSTO,9:DIAS_SEPTIEMBRE,10:DIAS_OCTUBRE,11:DIAS_NOVIEMBRE,12:DIAS_DICIEMBRE}
 
     if es_bisiesto(a)==True and m==2:
         return DIAS_FEBRERO_BISIESTO
@@ -74,7 +73,7 @@ def fecha_valida(d,m,a):
     else:
       return False
 
-  elif es_bisiesto(a)==False:
+  else:
     if d>0 and d<=asoci[m]:
       return True
 
